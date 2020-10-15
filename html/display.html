@@ -5,7 +5,42 @@
     <meta charset="UTF-8">
     <title>Display</title>
     <style>
-        /* ... */
+        body {
+            background-color: coral;
+            color: white;
+            font-size: 40px;
+        }
+
+        div {
+            background-color: seagreen;
+        }
+
+        li {
+            background-color: purple;
+        }
+
+        span {
+            background-color: dodgerblue;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        div, span, li {
+            width: 40%;/*Não suportado no 'span*/
+            width: 200px;/*Não suportado no 'span*/
+            height: 80px;/*Não suportado no 'span*/
+            padding-top: 30px;/*Sim suportado no 'span*/
+            text-align: center;/*Sim suportado no 'span*/
+
+            display: block;
+            display: inline;
+            display: inline-block;
+        }
+
+
+
     </style>
 </head>
 

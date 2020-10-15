@@ -6,6 +6,10 @@
     <title>Especificidade CSS</title>
     <style>
         /* https://specificity.keegan.st/ */
+        div {background-color: #00b; color: white;} /*Especificidade 1*/
+        div:hover {background-color: black; color: white;}/*Esp. 11*/
+        div[wm-cor] {background-color: darkorange;} /*Esp. 11*/
+        div.estilo {background-color: yellow;}/*Esp. 11*/
     </style>
 </head>
 
