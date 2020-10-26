@@ -1,23 +1,43 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Flexbox #03</title>
-    <link rel="stylesheet" href="css/tag.css">
+    <link rel="stylesheet" href="css/tag.css" />
     <style>
-        /* ... */
-    </style>
-</head>
+      div {
+        border: solid 4px dodgerblue;
+        box-sizing: border-box;
+        font-size: 40px;
+      }
+      .flex-container {
+        border: solid 4px red;
+        display: flex;
+      }
 
-<body>
+      .flex-container div {
+        box-sizing: border-box;
+        flex-basis: 100px; /*Dimensão do elemento na direção do MAIN AXIS*/
+      }
+
+      /* .flex-container div:nth-child(4), */
+      .flex-container div:nth-child(3) {
+        flex: 3 2 100px;
+      }
+
+      .flex-container {
+        width: 300px;
+      }
+    </style>
+  </head>
+
+  <body>
     <div class="flex-container tag nolabel">
-        <div class="tag nolabel">1</div>
-        <div class="tag nolabel">2</div>
-        <div class="tag nolabel">3</div>
-        <div class="tag nolabel">4</div>
+      <div class="tag nolabel">1</div>
+      <div class="tag nolabel">2</div>
+      <div class="tag nolabel">3</div>
+      <div class="tag nolabel">4</div>
     </div>
     <script src="js/tag.js"></script>
-</body>
-
+  </body>
 </html>

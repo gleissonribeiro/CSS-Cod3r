@@ -1,32 +1,62 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>CSS Grid #02</title>
     <style>
-        html,
-        body {
-            margin: 20px;
-            height: calc(100% - 40px);
-            background-color: lightgray;
-        }
-        
-        div {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 30px;
-            border: solid 5px dodgerblue;
-            background: #fff;
-        }
-    </style>
-</head>
+      html,
+      body {
+        margin: 20px;
+        height: calc(100% - 40px);
+        background-color: lightgray;
+      }
 
-<body>
+      html {
+        border: solid 3px black;
+      }
+
+      body {
+        border: solid 3px red;
+        display: grid;
+        grid-template-columns:
+          [ini] 1fr
+          [met-1 meio-1] 1fr
+          [met-2 meio-2] 1fr
+          [fim];
+        grid-template-rows: repeat(3, 1fr);
+
+        /* Gaps entre linhas e colunas */
+        column-gap: 20px;
+        row-gap: 10px;
+        gap: 30px 40px;
+      }
+
+      div {
+        align-items: center;
+        background: #fff;
+        border: solid 5px dodgerblue;
+        display: flex; /*Todas as 'div' são flex container*/
+        font-size: 30px;
+        justify-content: center;
+        /* margin: 10px; */
+      }
+
+      .d1 {
+        grid-column-start: met-1;
+        grid-column-end: fim;
+        grid-column: met-1 / fim;
+        grid-row: 1 / span 2;
+
+        grid-area: 1 / met-1 / span 2 / fim;
+      }
+    </style>
+  </head>
+
+  <body>
     <div class="d1">1</div>
     <div class="d2">2</div>
     <div class="d3">3</div>
-</body>
-
+    <div class="d3">4</div>
+    <div class="d3">5</div>
+  </body>
 </html>

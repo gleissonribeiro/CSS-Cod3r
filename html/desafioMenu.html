@@ -1,51 +1,185 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Desafio Menu</title>
-    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
-    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Oswald"
+      rel="stylesheet"
+    />
+    <link
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      rel="stylesheet"
+    />
     <style>
-        /* ... */
-    </style>
-</head>
+      * {
+        box-sizing: border-box;
+      }
 
-<body>
+      body {
+        background-color: lightgray;
+        font-family: Oswald, sans-serif;
+        margin: 0px;
+      }
+
+      /* Aside */
+      .autenticacao {
+        float: right;
+        height: 80px;
+        padding: 25px;
+      }
+
+      /* Links */
+      .autenticacao a {
+        color: white;
+        font-size: 1.3em;
+        font-style: italic;
+        text-decoration: none;
+      }
+
+      /* Botão 'Registrar' */
+      .botao {
+        border-radius: 30px;
+        margin: 10px;
+        padding: 7px;
+      }
+
+      /* Destaque */
+      .destaque {
+        background-color: red;
+      }
+
+      /* Cabeçalho */
+      .cabecalho {
+        background-color: #444;
+        border-bottom: solid 5px #4faddb;
+        box-sizing: content-box;
+        height: 80px;
+        margin-top: 0px;
+      }
+
+      /* 'div' com a figura */
+      .logo {
+        display: inline-block;
+        height: 80px;
+        padding: 15px;
+      }
+
+      /* Figura 'logo' */
+      .logo img {
+        height: 100%;
+      }
+
+      /* Botão do menu */
+      .menu-toggle {
+        background-color: #555;
+        border: solid 1px #777;
+        border-radius: 5px;
+        color: #eee;
+        float: right;
+        height: 40px;
+        margin: 20px 15px;
+        padding: 10px 20px;
+      }
+
+      /* 'div' com o menu*/
+      .menu {
+        display: inline-block;
+        height: 80px;
+        padding: 25px;
+        vertical-align: top;
+      }
+
+      /* Lista com o menu */
+      .menu ul {
+        margin: 0;
+        padding: 0;
+      }
+
+      /* Itens do menu */
+      .menu li {
+        display: inline-block;
+      }
+
+      /* Links */
+      .menu a {
+        border-radius: 5px;
+        color: white;
+        font-size: 1.3em;
+        padding: 15px;
+        text-decoration: none;
+      }
+
+      .menu a:hover,
+      .menu a.selected {
+        background-color: white;
+        color: #444;
+      }
+
+      @media (max-width: 910px) {
+        .autenticacao {
+          display: none;
+        }
+      }
+
+      @media (min-width: 679px) {
+        .menu-toggle {
+          display: none;
+        }
+      }
+
+      @media (max-width: 679px) {
+        .menu {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
     <header class="cabecalho">
-        <div class="logo">
-            <a href="#inicio">
-                <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
-            </a>
-        </div>
-        <button class="menu-toggle">
-            <i class="fa fa-lg fa-bars"></i>
-        </button>
-        <nav class="menu">
-            <ul>
-                <li>
-                    <a href="#inicio">Início</a>
-                </li>
-                <li>
-                    <a href="#cursos">Cursos</a>
-                </li>
-                <li>
-                    <a href="#sobre">Sobre</a>
-                </li>
-                <li>
-                    <a href="#contato">Contato</a>
-                </li>
-            </ul>
-        </nav>
-        <aside class="autenticacao">
-            <a href="#login">Login</a>
-            <a href="#registar" class="botao destaque">Registrar</a>
-        </aside>
+      <div class="logo">
+        <a href="#inicio">
+          <img src="http://files.cod3r.com.br/curso-web/logo.png" alt="Logo" />
+        </a>
+      </div>
+
+      <button class="menu-toggle">
+        <i class="fa fa-lg fa-bars"></i>
+      </button>
+      <nav class="menu">
+        <ul>
+          <li>
+            <a href="#inicio">Início</a>
+          </li>
+          <li>
+            <a href="#cursos">Cursos</a>
+          </li>
+          <li>
+            <a href="#sobre">Sobre</a>
+          </li>
+          <li>
+            <a href="#contato">Contato</a>
+          </li>
+        </ul>
+      </nav>
+      <aside class="autenticacao">
+        <a href="#login">Login</a>
+        <a href="#registar" class="botao destaque">Registrar</a>
+      </aside>
     </header>
 
     <script>
-        // ...
-    </script>
-</body>
+      window.onhashchange = function (event) {
+        const oldHash = event.oldURL.split('#')[1]
+        const newHash = event.newURL.split('#')[1]
 
+        const oldLink = document.querySelector(`.menu a[href="#${oldHash}"]`)
+        const newLink = document.querySelector(`.menu a[href="#${newHash}"]`)
+
+        oldLink && oldLink.classList.remove('selected')
+        newLink && newLink.classList.add('selected')
+      }
+    </script>
+  </body>
 </html>

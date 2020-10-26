@@ -1,26 +1,85 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <title>Position</title>
     <style>
-        /* ... */
-    </style>
-</head>
+      body {
+        border: dashed 3px pink;
+      }
 
-<body>
+      div {
+        border: solid 5px black;
+        font-size: 30px;
+        padding: 30px;
+      }
+
+      .static {
+        background-color: aquamarine;
+        left: 100px; /*Não é considerada quando postion: static*/
+        top: 100px; /*Não é considerada quando postion: static*/
+      }
+
+      .fixed {
+        background-color: tomato;
+        bottom: 30px;
+        position: fixed; /*Fixo em relação ao Viewport*/
+        right: 0px;
+      }
+
+      .relative1 {
+        background-color: green;
+        left: 50px;
+        position: relative;
+        top: 5px;
+      }
+
+      .absolute1 {
+        position: absolute;
+        background-color: violet;
+        left: 0px;
+        top: 0px;
+      }
+
+      .relative2 {
+        position: relative;
+        background: aqua;
+        left: 50px;
+        top: 600px;
+        width: 200px;
+        height: 200px;
+      }
+
+      .absolute2 {
+        position: absolute;
+        left: 10px;
+        top: 10px;
+        width: 20px;
+        height: 20px;
+        background-color: orange;
+      }
+
+      .sticky {
+        position: -webkit-sticky; /*Para o safari*/
+        position: sticky;
+        background-color: #777;
+        top: 0px;
+      }
+    </style>
+  </head>
+
+  <body>
     <div class="static">Static (Padrão)</div>
     <div class="fixed">Fixed</div>
     <div class="relative1">Relative</div>
+
     <div class="absolute1">Absolute</div>
 
     <div class="relative2">
-        <div class="absolute2"></div>
+      <div class="absolute2"></div>
     </div>
 
     <div class="sticky">Sticky</div>
-    <p style="padding-bottom: 2000px;">Opa</p>
-</body>
-
+    <p style="padding-bottom: 2000px">Opa</p>
+  </body>
 </html>

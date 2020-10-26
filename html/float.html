@@ -11,10 +11,12 @@
 
         .c1 {
             background-color: red;
+            float: right;
         }
 
         .c2 {
             background-color: green;
+            clear: both;
         }
         
         .c3 {
@@ -24,12 +26,30 @@
         .c4 {
             background-color: orange;
         }
+
+
+        div {
+            height: 120px;
+            width: 150px;
+            display: inline; /*As 'div' somem pois não consideram 'height' e 'width'*/
+            /* display: inline-block; */
+            display:block
+        }
+
+        /* .teste {
+            background-color: pink;
+            float: right;
+            margin: 4px;
+        } */
     </style>
 </head>
 
 <body>
     <div class="c1"></div>
-    <div class="c2"></div>
+    <div class="c2">
+        <!-- <span class="teste">Gleisson</span>
+        <span class="teste">Silva</span> -->
+    </div>
     <div class="c3"></div>
     <div class="c4"></div>
 </body>
